@@ -1,0 +1,29 @@
+cont wrf_container {
+    type "singularity"
+    image_site "condorpool"
+    image "file://${PWD}/bin/wrf_singularity.img"
+    #profile env "SEQEXEC_CPUS" "4"
+}
+
+tr gunzip {
+   site condorpool {
+   	pfn "/bin/gunzip"
+	arch "x86_64"
+	os "LINUX"
+	type "INSTALLED"
+	profile pegasus "label" "unzip"
+    }
+}
+
+tr wrf {
+   	site condorpool {
+	     	container "wrf_container"
+		pfn "wrf_hydro_NoahMP.exe"
+		arch "x86_64"
+		os "LINUX"
+		type "INSTALLED"
+		profile pegasus "label" "casa_job"
+		#profile pegasus "cores" "1"
+	}
+}
+

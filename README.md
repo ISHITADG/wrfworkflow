@@ -1,4 +1,4 @@
-# Workflow repo includes
-1. executable <br/>
-2. rainfall data <br/>
-3. output <br/>
+# hail workflow
+Pegasus workflow for the CASA hail workflow
+
+container: https://hub.docker.com/r/casaelyons/hailworkflow

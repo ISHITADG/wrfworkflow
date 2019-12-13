@@ -1,0 +1,3 @@
+namelist.hrldas		file://${PWD}/input/namelist.hrldas	site="local"
+hydro.namelist		file://${PWD}/input/hydro.namelist	site="local"
+#.*                             file://${PWD}/input/[0]                             site="local"    regex="true"
