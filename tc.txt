@@ -15,6 +15,16 @@ tr gunzip {
     }
 }
 
+tr tar {
+   site condorpool {
+   	pfn "/bin/tar"
+	arch "x86_64"
+	os "LINUX"
+	type "INSTALLED"
+	profile pegasus "label" "untar"
+   }
+}
+					       
 tr wrf {
    	site condorpool {
 	     	container "wrf_container"
