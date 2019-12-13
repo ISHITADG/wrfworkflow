@@ -1,0 +1,68 @@
+&NOAHLSM_OFFLINE
+
+ HRLDAS_CONSTANTS_FILE = "./DOMAIN/wrfinput_dfw_geo500Jan.nc"
+ INDIR  = './dfw_forcing_lsm500m_ishita'
+
+ MMF_RUNOFF_FILE = "/raid/weiyu/HRLDAS_V3.5_wrk/data/wrfleafxyz_d01.nc"
+
+START_YEAR  = 2017
+START_MONTH  = 01
+START_DAY  = 16
+START_HOUR  = 01
+START_MIN   = 00
+
+! KDAY = 1
+ KHOUR = 2
+
+ ! RESTART_FILENAME_REQUESTED  = 'RESTART.2017011606_DOMAIN1'
+
+
+ DYNAMIC_VEG_OPTION                = 1 ! Vegetation model ( 1->table LAI, read FVEG; 2->dynamic LAI, FVEG=f(LAI);
+                                       ! 3->table LAI,FVEG=f(LAI); 4->table LAI, FVEG=maximum; 5->dynamic LAI, FVEG =maximum)
+ CANOPY_STOMATAL_RESISTANCE_OPTION = 1 ! Canopy stomatal resistance (1-> Ball-Berry; 2->Jarvis)
+ BTR_OPTION                        = 1 ! Soil moisture factor for stomatal resistance (1-> Noah; 2-> CLM; 3-> SSiB)
+ RUNOFF_OPTION                     = 3 ! Runoff and groundwater (1->SIMGM; 2->SIMTOP; 3->Schaake96; 4->BATS)
+ SURFACE_DRAG_OPTION               = 1 ! Surface layer drag coeff (CH & CM) (1->M-O; 2->Chen97)
+ FROZEN_SOIL_OPTION                = 1 ! Frozen soil permeability (1-> NY06; 2->Koren99)
+ SUPERCOOLED_WATER_OPTION          = 1 ! Supercooled liquid water (1-> NY06; 2->Koren99)
+ RADIATIVE_TRANSFER_OPTION         = 3 ! Radiation transfer (1->gap=F(3D,cosz); 2->gap=0; 3->gap=1-Fveg)
+ SNOW_ALBEDO_OPTION                = 2 ! Snow surface albedo (1->BATS; 2->CLASS)
+ PCP_PARTITION_OPTION              = 1 ! Rainfall & snowfall (1-Jordan91; 2->BATS; 3->Noah)
+ TBOT_OPTION                       = 2 ! Lower boundary of soil temperature (1->zero-flux; 2->Noah)
+ TEMP_TIME_SCHEME_OPTION           = 1 ! snow/soil temperature time scheme (1->semi-implicit; 2->fully implicit; 3->Ts=f(fsno))
+
+ !in second
+ FORCING_TIMESTEP = 60
+ NOAH_TIMESTEP    = 60
+ OUTPUT_TIMESTEP  = 864000
+
+ RESTART_FREQUENCY_HOURS = 1 !240
+ ! Split output after split_output_count output times.
+ SPLIT_OUTPUT_COUNT = 1
+
+
+ NSOIL=4
+ soil_thick_input(1) = 0.10
+ soil_thick_input(2) = 0.30
+ soil_thick_input(3) = 0.60
+ soil_thick_input(4) = 1.00
+
+ ZLVL = 15.0
+
+!Specification of forcing data:  1=HRLDAS-hr format, 2=HRLDAS-min format, 3=WRF, 4=Idealized, 5=Ideal w/ Spec.Precip., 6=HRLDAS-hrl y format w/ Spec. Precip 
+ FORC_TYP = 6
+
+! for extract greenfrac
+ GEO_STATIC_FLNM = "./DOMAIN/geo_em.d01_dfw_lsm500m.nc"
+
+!HRLDAS_ini_typ 1: initial and parameters from frocing; 0: from wrfinput.
+ HRLDAS_ini_typ = 0
+
+ SNOW_assim = 0
+
+/
+
+&URBAN_OFFLINE
+ UCMCALL = 0
+ ZLVL_URBAN = 15.0
+/
