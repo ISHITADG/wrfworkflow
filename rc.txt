@@ -1,4 +1,5 @@
-namelist.hrldas		file://${PWD}/input/namelist.hrldas	site="local"
-hydro.namelist		file://${PWD}/input/hydro.namelist	site="local"
-inputdata.tar		file://${PWD}/input/inputdata.tar	site="local"
+#namelist.hrldas		file://${PWD}/input/namelist.hrldas	site="local"
+#hydro.namelist		file://${PWD}/input/hydro.namelist	site="local"
+wrf_config.tar		file://${PWD}/input/wrf_config.tar      site="local"
+FORCING.tar.gz		file:///nfs/shared/ldm/FORCING.tar.gz	site="condorpool"
 #.*                             file://${PWD}/input/[0]                             site="local"    regex="true"

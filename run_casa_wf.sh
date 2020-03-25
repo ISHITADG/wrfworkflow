@@ -4,7 +4,7 @@ old_dir=`pwd`
 
 cd $HAIL_WORKFLOW_DIR
 
-dax_name=$(python daxgen.py -o dax_outputs -f $@)
+dax_name=$(python daxgen.py -o dax_outputs -f $@ -c $@)
 echo $dax_name;
 ./plan.sh ${dax_name}
 

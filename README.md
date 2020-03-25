@@ -1,13 +1,10 @@
 
-# hail workflow
-Pegasus workflow for the CASA hail workflow
+# wrf workflow
+Pegasus workflow for the CASA wrf workflow
 
-container: https://hub.docker.com/r/casaelyons/hailworkflow
+container: https://hub.docker.com/r/casaelyons/wrfworkflow
 =======
-# Workflow repo includes
-1. executable <br/>
-2. rainfall data <br/>
-3. output <br/>
-4. container <br/>
-5. config files-namelist.hrldas, hydro.namelist
+
+
+
 

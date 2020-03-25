@@ -1,9 +1,10 @@
 cont wrf_container {
     type "singularity"
     image_site "condorpool"
-    image "file://${PWD}/bin/wrf_singularity.img"
-    #profile env "SEQEXEC_CPUS" "4"
+    image "file://nfs/shared/wrf_singularity.img"
+    mount "/nfs/shared:/nfs/shared"
 }
+    
 
 tr gunzip {
    site condorpool {
@@ -28,7 +29,7 @@ tr tar {
 tr wrf {
    	site condorpool {
 	     	container "wrf_container"
-		pfn "wrf_hydro_NoahMP.exe"
+		pfn " /example_case/NWM/wrf_hydro_NoahMP.exe"
 		arch "x86_64"
 		os "LINUX"
 		type "INSTALLED"
