@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-old_dir=`pwd`
-
-cd $HAIL_WORKFLOW_DIR
-
-dax_name=$(python daxgen.py -o dax_outputs -f $@ -c $@)
+dax_name=$(python daxgen.py -o dax_outputs -f /nfs/shared/ldm/FORCING.tar.gz -c /home/ldm/wrfworkflow/input/wrf_config.tar)
 echo $dax_name;
 ./plan.sh ${dax_name}
 
-cd $old_dir
+

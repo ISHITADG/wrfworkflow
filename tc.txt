@@ -1,7 +1,7 @@
 cont wrf_container {
     type "singularity"
     image_site "condorpool"
-    image "file://nfs/shared/wrf_singularity.img"
+    image "file://nfs/shared/ldm/wrf_singularity.img"
     mount "/nfs/shared:/nfs/shared"
 }
     
